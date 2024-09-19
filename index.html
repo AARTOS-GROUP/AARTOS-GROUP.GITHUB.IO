@@ -5,256 +5,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AARTOS GROUP CORPORATION</title>
 
-    <!-- Importando a fonte normal do Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia:wght@700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Estilo do slider -->
     <style>
         /* Configurações globais */
         body {
-            background-color: #000000; /* Fundo preto */
+            background-color: #1a1a1a; /* Fundo cinza escuro */
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            min-height: 100vh;
-            text-align: center; /* Centraliza todo o conteúdo */
         }
 
-        h1 {
-            color: red; /* Destaca o título em vermelho */
-            font-size: 4em;
+        header {
+            background-color: #141414; /* Barra de navegação */
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            color: #d4af37; /* Dourado */
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.5em;
             margin: 0;
-            white-space: nowrap; /* Impede a quebra de linha */
+        }
+
+        .content {
+            padding: 80px 20px 40px;
+            text-align: center;
         }
 
         h2 {
-            font-family: Arial, sans-serif;
             color: white;
-            font-size: 2.5em;
-            margin-top: 0;
+            font-size: 2em;
+            margin-top: 20px;
         }
 
         p {
             font-size: 1.2em;
             text-align: justify;
             width: 80%;
-            line-height: 1.6;
-            color: white;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.8;
         }
 
-        /* Destaques em vermelho */
         .highlight {
-            color: red; /* Destaque em vermelho */
+            color: #d4af37; /* Destaque dourado */
             font-weight: bold;
-            margin-top: 20px;
             font-size: 1.4em;
         }
 
-        .subtitle {
-            margin-top: 20px;
-        }
-
-        footer {
-            margin-top: auto;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .social-links {
-            margin-top: 10px;
-        }
-
-        .social-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 2.5em; /* Tamanho do título para o link do Telegram */
-            display: block;
-            margin: 0 auto; /* Centraliza o link do Telegram */
-        }
-
-        .footer-text {
-            margin-top: 10px;
-            color: red; /* Destaque em vermelho */
-            font-weight: bold;
-        }
-
-        .footer-text-bold {
-            font-weight: bold;
-            margin-top: 10px;
-            display: block;
-            color: white;
-        }
-
-        /* Slider de imagens */
         .image-slider {
             position: relative;
             width: 80%;
             max-width: 600px;
-            margin: 20px auto;
+            margin: 30px auto;
             overflow: hidden;
         }
 
         .image-slider img {
             width: 100%;
             height: auto;
-            display: block;
-            transition: opacity 0.5s ease;
         }
 
-        .image-slider .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .image-slider .slide.active {
-            opacity: 1;
-        }
-
-        .image-slider .prev,
-        .image-slider .next {
-            position: absolute;
-            top: 50%;
-            width: 50px;
-            height: 50px;
-            background-color: rgba(0, 0, 0, 0.5);
+        footer {
+            background-color: #141414;
+            padding: 20px;
+            text-align: center;
             color: white;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2em;
-            z-index: 1;
+            margin-top: 40px;
         }
 
-        .image-slider .prev {
-            left: 10px;
-            transform: translateY(-50%);
+        .social-links a {
+            color: #d4af37; /* Dourado */
+            font-size: 1.8em;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px;
         }
 
-        .image-slider .next {
-            right: 10px;
-            transform: translateY(-50%);
+        .footer-text {
+            color: #d4af37;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .footer-text-bold {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
         }
 
         /* Responsividade */
         @media (max-width: 768px) {
             h1 {
-                font-size: 3em;
-            }
-
-            h2 {
                 font-size: 2em;
             }
 
+            h2 {
+                font-size: 1.6em;
+            }
+
             p {
-                width: 90%;
                 font-size: 1.1em;
             }
 
             .highlight {
-                font-size: 1.2em;
-            }
-
-            .social-links a {
-                font-size: 2em; /* Ajusta o tamanho do link do Telegram em telas menores */
+                font-size: 1.3em;
             }
         }
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 2.5em;
+                font-size: 1.6em;
             }
 
             h2 {
-                font-size: 1.8em;
+                font-size: 1.3em;
             }
 
             p {
-                width: 95%;
                 font-size: 1em;
             }
 
             .highlight {
                 font-size: 1.1em;
             }
-
-            .social-links a {
-                font-size: 1.8em; /* Ajusta o tamanho do link do Telegram em telas menores */
-            }
         }
     </style>
 </head>
 <body>
 
-    <h1>AARTOS GROUP CORPORATION</h1>
-    <h2>PARAMILITAR</h2>
+    <!-- Cabeçalho fixo -->
+    <header>
+        <h1>AARTOS GROUP CORPORATION</h1>
+    </header>
 
-    <p>Um grupo paramilitar é uma organização armada que opera de forma não oficial e que, geralmente, não é reconhecida como uma força militar legítima por um Estado. Esses grupos podem ser formados por civis e têm diversas motivações, que podem incluir políticas, ideológicas, étnicas ou religiosas. Em resumo, grupos paramilitares são organizações armadas que operam fora do controle estatal, com uma variedade de motivações e métodos, e que podem ter impactos significativos na segurança e na dinâmica social de uma região.</p>
+    <!-- Conteúdo principal -->
+    <div class="content">
+        <h2>PARAMILITAR</h2>
 
-    <p class="highlight">NÓS NÃO SOMOS UM GRUPO PARAMILITAR!</p>
+        <p>Um grupo paramilitar é uma organização armada que opera de forma não oficial e que, geralmente, não é reconhecida como uma força militar legítima por um Estado. Esses grupos podem ser formados por civis e têm diversas motivações, que podem incluir políticas, ideológicas, étnicas ou religiosas. Em resumo, grupos paramilitares são organizações armadas que operam fora do controle estatal, com uma variedade de motivações e métodos, e que podem ter impactos significativos na segurança e na dinâmica social de uma região.</p>
 
-    <h2 class="subtitle">ATIVISMO</h2>
-    <p>Ativismo, em si, não é um crime. Trata-se de uma prática legítima de expressão e mobilização em torno de causas sociais, políticas, econômicas ou ambientais.</p>
+        <p class="highlight">NÓS NÃO SOMOS UM GRUPO PARAMILITAR!</p>
 
-    <p class="highlight">O ativismo é uma forma de participação cívica e pode ser fundamental para a promoção de mudanças e a defesa de direitos.</p>
+        <h2>ATIVISMO</h2>
+        <p>Ativismo, em si, não é um crime. Trata-se de uma prática legítima de expressão e mobilização em torno de causas sociais, políticas, econômicas ou ambientais.</p>
 
-    <!-- Slider de imagens -->
-    <div class="image-slider">
-        <div class="slide active">
+        <p class="highlight">O ativismo é uma forma de participação cívica e pode ser fundamental para a promoção de mudanças e a defesa de direitos.</p>
+
+        <!-- Slider de Imagens -->
+        <div class="image-slider">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnnP7QdbhDB1r3YDlddiMXi6bwWeHRdDLK61GGEpCO_i7cj3I0ocMIoF4&s=10" alt="Imagem 1">
-        </div>
-        <div class="slide">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6YOOmZ6D9590D0gLtYYw4iPu0E9WFn5vXzg&usqp=CAU" alt="Imagem 2">
         </div>
-        <button class="prev" onclick="prevSlide()">&#10094;</button>
-        <button class="next" onclick="nextSlide()">&#10095;</button>
     </div>
 
+    <!-- Rodapé -->
     <footer>
         <div class="social-links">
             <a href="https://t.me/seudotelegram" target="_blank">Telegram</a>
         </div>
 
         <div class="footer-text">NÃO USAMOS O NOME DE DEUS EM VÃO.</div>
-        <span class="footer-text-bold">Acreditamos sim em Deus e temos nossa fé mas não fazemos de tal um escudo para nossos atos ou falas. O que dizemos é de total responsabilidade nossa sem outrem.</span>
+        <span class="footer-text-bold">Acreditamos sim em Deus e temos nossa fé, mas não fazemos de tal um escudo para nossos atos ou falas. O que dizemos é de total responsabilidade nossa sem outrem.</span>
     </footer>
-
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.image-slider .slide');
-        const totalSlides = slides.length;
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) {
-                    slide.classList.add('active');
-                }
-            });
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            showSlide(currentSlide);
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
-        }
-    </script>
 
 </body>
 </html>
