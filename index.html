@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AARTOS GROUP</title>
+
+    <!-- Importando a fonte gótica do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
     <style>
+        /* Configurações globais */
         body {
-            background: linear-gradient(135deg, #0033A0, #002A80);
+            background: url('https://media.giphy.com/media/axnFGXT6MzvgY/giphy.gif') no-repeat center center fixed; /* GIF de fundo */
+            background-size: cover;
             color: white;
             font-family: Arial, sans-serif;
             margin: 0;
@@ -16,55 +22,110 @@
             align-items: center;
             flex-direction: column;
             min-height: 100vh;
+            text-align: center; /* Centraliza todo o conteúdo */
         }
-        h1 {
-            font-family: 'Gothic', sans-serif;
-            font-size: 4em;
+
+        h1, h2 {
+            font-family: 'UnifrakturMaguntia', cursive; /* Fonte gótica aplicada a todos os títulos e subtítulos */
             color: white;
         }
+
+        h1 {
+            font-size: 4em;
+        }
+
         h2 {
-            font-size: 2em;
+            font-size: 2.5em;
             margin-top: 0;
         }
+
         p {
             font-size: 1.2em;
             text-align: justify;
             width: 80%;
             line-height: 1.6;
+            color: white;
         }
+
+        /* Destaques em vermelho */
         .highlight {
-            color: yellow;
+            color: red; /* Destaque em vermelho */
             font-weight: bold;
             margin-top: 20px;
             font-size: 1.4em;
         }
+
         .subtitle {
             margin-top: 20px;
-            font-size: 2em;
         }
+
         footer {
             margin-top: auto;
             padding: 20px;
             text-align: center;
         }
+
         .social-links {
             margin-top: 10px;
         }
+
         .social-links a {
             margin: 0 10px;
             color: white;
             text-decoration: none;
             font-weight: bold;
         }
+
         .footer-text {
             margin-top: 10px;
-            color: yellow;
+            color: red; /* Destaque em vermelho */
             font-weight: bold;
         }
+
         .footer-text-bold {
             font-weight: bold;
             margin-top: 10px;
             display: block;
+            color: white;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            p {
+                width: 90%;
+                font-size: 1.1em;
+            }
+
+            .highlight {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            p {
+                width: 95%;
+                font-size: 1em;
+            }
+
+            .highlight {
+                font-size: 1.1em;
+            }
         }
     </style>
 </head>
@@ -85,12 +146,4 @@
     <footer>
         <div class="social-links">
             <a href="https://t.me/seudotelegram" target="_blank">Telegram</a>
-            <a href="https://wa.me/seunumerodowhatsapp" target="_blank">WhatsApp</a>
-        </div>
-
-        <div class="footer-text">NÃO USAMOS O NOME DE DEUS EM VÃO.</div>
-        <span class="footer-text-bold">Acreditamos sim em Deus e temos nossa fé mas não fazemos de tal um escudo para nossos atos ou falas. O que dizemos é de total responsabilidade nossa sem outrem.</span>
-    </footer>
-
-</body>
-</html>
+            <a href="https://
