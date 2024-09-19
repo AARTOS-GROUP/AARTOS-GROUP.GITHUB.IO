@@ -8,6 +8,7 @@
     <!-- Importando a fonte normal do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia:wght@700&display=swap" rel="stylesheet">
 
+    <!-- Estilo do slider -->
     <style>
         /* Configurações globais */
         body {
@@ -90,6 +91,63 @@
             color: white;
         }
 
+        /* Slider de imagens */
+        .image-slider {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .image-slider img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: opacity 0.5s ease;
+        }
+
+        .image-slider .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .image-slider .slide.active {
+            opacity: 1;
+        }
+
+        .image-slider .prev,
+        .image-slider .next {
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            z-index: 1;
+        }
+
+        .image-slider .prev {
+            left: 10px;
+            transform: translateY(-50%);
+        }
+
+        .image-slider .next {
+            right: 10px;
+            transform: translateY(-50%);
+        }
+
         /* Responsividade */
         @media (max-width: 768px) {
             h1 {
@@ -152,6 +210,18 @@
 
     <p class="highlight">O ativismo é uma forma de participação cívica e pode ser fundamental para a promoção de mudanças e a defesa de direitos.</p>
 
+    <!-- Slider de imagens -->
+    <div class="image-slider">
+        <div class="slide active">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnnP7QdbhDB1r3YDlddiMXi6bwWeHRdDLK61GGEpCO_i7cj3I0ocMIoF4&s=10" alt="Imagem 1">
+        </div>
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6YOOmZ6D9590D0gLtYYw4iPu0E9WFn5vXzg&usqp=CAU" alt="Imagem 2">
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+
     <footer>
         <div class="social-links">
             <a href="https://t.me/seudotelegram" target="_blank">Telegram</a>
@@ -160,6 +230,31 @@
         <div class="footer-text">NÃO USAMOS O NOME DE DEUS EM VÃO.</div>
         <span class="footer-text-bold">Acreditamos sim em Deus e temos nossa fé mas não fazemos de tal um escudo para nossos atos ou falas. O que dizemos é de total responsabilidade nossa sem outrem.</span>
     </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.image-slider .slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+    </script>
 
 </body>
 </html>
